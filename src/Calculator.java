@@ -8,15 +8,19 @@ public class Calculator {
 		else if(numbers.contains(",")) {
 			String del = ",";
 			String[] split = numbers.split(del);
-			int num1, num2;
-			try {
-				num1 = Integer.parseInt(split[0]);
-				num2 = Integer.parseInt(split[1]);
-			} catch (Exception e) {
-				System.out.println("Invalid String");
-				return -1;
+
+			int n = split.length;
+			int sum=0, num;
+			for(int i=0;i<n;i++) {
+				try {
+					num = Integer.parseInt(split[i]);
+					sum += num;
+				} catch (Exception e) {
+					System.out.println("Invalid String");
+					return -1;
+				}
 			}
-			return num1 + num2;	
+			return sum;	
 		}
 		else {
 			try {
