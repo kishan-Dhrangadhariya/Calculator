@@ -20,6 +20,8 @@ public class Calculator {
 					if(num < 0) {
 						throw new NegativeNumberException();
 					}
+					if(num > 1000) 
+						continue;
 					sum += num;
 				} catch (Exception e) {
 					System.out.println("Invalid String");
@@ -40,6 +42,8 @@ public class Calculator {
 					if(num < 0) {
 						throw new NegativeNumberException();
 					}
+					if(num > 1000) 
+						continue;
 					sum += num;
 				} catch (Exception e) {
 					System.out.println("Invalid String");

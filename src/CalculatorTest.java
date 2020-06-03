@@ -12,7 +12,7 @@ public class CalculatorTest {
 			num5 = Calculator.Add("1,2,4\n5");
 			num6 = Calculator.Add("//:\n1:2:4:5");
 			num7 = Calculator.Add("1,2,4\n-5");
-			num8 = Calculator.Add("1,2,4\n5");
+			num8 = Calculator.Add("1,2,4\n5000");
 		} catch (Exception e) {
 			((Throwable) e).printStackTrace();
 		}
@@ -23,6 +23,6 @@ public class CalculatorTest {
 		assertEquals(num5, 12);
 		assertEquals(num6, 12);
 		assertEquals(num7, -1);
-		assertEquals(num8, 12);
+		assertEquals(num8, 7);
 	 }
 }
