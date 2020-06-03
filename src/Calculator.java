@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class Calculator {
-	public static int Add(String numbers) throws IOException {
+	public static int Add(String numbers) throws IOException, NegativeNumberException {
 		if(numbers.length() == 0) {
 			return 0;
 		}
@@ -17,6 +17,9 @@ public class Calculator {
 			for(int i=0;i<n;i++) {
 				try {
 					num = Integer.parseInt(split[i]);
+					if(num < 0) {
+						throw new NegativeNumberException();
+					}
 					sum += num;
 				} catch (Exception e) {
 					System.out.println("Invalid String");
@@ -34,6 +37,9 @@ public class Calculator {
 			for(int i=0;i<n;i++) {
 				try {
 					num = Integer.parseInt(split[i]);
+					if(num < 0) {
+						throw new NegativeNumberException();
+					}
 					sum += num;
 				} catch (Exception e) {
 					System.out.println("Invalid String");
@@ -52,4 +58,9 @@ public class Calculator {
 			}	
 		}
 	}
+	static class NegativeNumberException extends Exception {
+    	public NegativeNumberException() {
+    		super();
+    	}
+    }
 }

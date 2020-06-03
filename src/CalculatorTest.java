@@ -11,7 +11,7 @@ public class CalculatorTest {
 			num4 = Calculator.Add("1,2,4,5");
 			num5 = Calculator.Add("1,2,4\n5");
 			num6 = Calculator.Add("//:\n1:2:4:5");
-			num7 = Calculator.Add("1,2,4\n5");
+			num7 = Calculator.Add("1,2,4\n-5");
 			num8 = Calculator.Add("1,2,4\n5");
 		} catch (Exception e) {
 			((Throwable) e).printStackTrace();
@@ -22,7 +22,7 @@ public class CalculatorTest {
 		assertEquals(num4, 12);
 		assertEquals(num5, 12);
 		assertEquals(num6, 12);
-		assertEquals(num7, 12);
+		assertEquals(num7, -1);
 		assertEquals(num8, 12);
 	 }
 }
