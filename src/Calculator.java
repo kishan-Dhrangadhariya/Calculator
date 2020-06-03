@@ -6,7 +6,7 @@ public class Calculator {
 			return 0;
 		}
 		else if(numbers.contains(",")) {
-			String del = ",";
+			String del = "[,\n]";
 			String[] split = numbers.split(del);
 
 			int n = split.length;
