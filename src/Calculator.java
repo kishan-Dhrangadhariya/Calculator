@@ -7,7 +7,14 @@ public class Calculator {
 		}
 		else if(numbers.charAt(0) == '/' && numbers.charAt(1) == '/') {
 			int in = numbers.indexOf("\n");
-			String del = numbers.substring(2, 3);
+			String del = null;
+			if(numbers.charAt(2) == '[') {
+				int in2 = numbers.indexOf("]");
+				del = numbers.substring(3, in2);
+				System.out.println(del);
+			}
+			else
+				del = numbers.substring(2, 3);
 			
 			numbers = numbers.substring(in+1, numbers.length());
 			String[] split = numbers.split(del);
@@ -62,9 +69,11 @@ public class Calculator {
 			}	
 		}
 	}
+	
 	static class NegativeNumberException extends Exception {
-    	public NegativeNumberException() {
-    		super();
-    	}
-    }
+		public NegativeNumberException() {
+			super();
+		}
+	}
 }
+
